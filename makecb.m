@@ -1,14 +1,16 @@
 % Create nice-looking colorbar
-% Alex Kinsella, November 2023
-
 function cb = makecb(cminmax,cm,titlestr,sz,ax)
 
 
 cb = colorbar;
-caxis(cminmax)
+clim(cminmax)
 cb.TickLabelInterpreter = 'latex';
 cb.FontSize = sz;
-ylabel(cb,titlestr,'Interpreter','latex','FontSize',sz);
+%drawnow;
+cb.Label.String = titlestr;
+cb.Label.Interpreter = 'latex';
+cb.Label.FontSize = sz;
+%ylabel(cb,titlestr,'Interpreter','latex','FontSize',sz);
 
 if nargin == 4 
     colormap(cm)

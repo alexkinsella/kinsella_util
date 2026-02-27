@@ -1,5 +1,4 @@
 % Create good-looking title
-% Alex Kinsella, November 2023
 
 function maketitle(str,sz)
 
